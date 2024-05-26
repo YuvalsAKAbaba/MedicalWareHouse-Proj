@@ -184,6 +184,7 @@ void PrintRequestStatus:: act(MedicalWarehouse& medWareHouse){
         return;
     }
     complete();
+    medWareHouse.addAction(this);
 }
 PrintRequestStatus* PrintRequestStatus::clone() const {
     return new PrintRequestStatus(*this);
@@ -315,8 +316,8 @@ void BackupWareHouse::act(MedicalWarehouse &medWareHouse)
         delete backup;
     }
     backup = new MedicalWarehouse(medWareHouse);
-    medWareHouse.addAction(this);
     complete();    
+    medWareHouse.addAction(this);
 }
 
 BackupWareHouse *BackupWareHouse::clone() const {

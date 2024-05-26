@@ -67,11 +67,6 @@ int Beneficiary::getMaxRequests() const {
 }
 
 int Beneficiary::getNumRequests() const {
-    // int made_Req = 0;
-    // for (int i = 0; i < requestsId.size(); i++) {
-    //     if (requestsId[i] != 0) made_Req++;
-    // }
-    // return made_Req;
     return requestsId.size();
 }
 
